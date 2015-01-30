@@ -1,49 +1,57 @@
 <!doctype html>
+
 <html>
-
 <head>
+  <title>Nagarjun Redla</title>
 
-  <title>unquote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <meta name="viewport"
-  content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="components/webcomponentsjs/webcomponents.js"></script>
 
-  <link rel="stylesheet" href="stylesheet/app.css">
+  <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
+  <link rel="import" href="components/core-image/core-image.html">
+  <link rel="import" href="components/core-icons/core-icons.html">
+  <link rel="import" href="components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="components/font-roboto/roboto.html">
+  <link rel="import" href="components/paper-button/paper-button.html">
+  <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="components/paper-fab/paper-fab.html">
+  <link rel="import" href="components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="components/paper-toast/paper-toast.html">
 
-  <script src="components/webcomponentsjs/webcomponents.js">
-  </script>
-
-  <link rel="import"
-    href="components/font-roboto/roboto.html">
-  <link rel="import"
-    href="components/core-header-panel/core-header-panel.html">
-  <link rel="import"
-    href="components/core-toolbar/core-toolbar.html">
-  <link rel="import"
-    href="components/paper-tabs/paper-tabs.html">
-  <link rel="import" href="post-list.html">
-
+  <link rel="stylesheet" href="stylesheet/styles.css">
 </head>
 
-<body unresolved fullbleed layout vertical>
-  <core-header-panel flex>
+<body unresolved>
+  <core-drawer-panel forceNarrow>
+    <core-header-panel drawer>
+      <core-toolbar>
+        <div>Application</div>
+      </core-toolbar>
+      <div> Drawer content... </div>
+    </core-header-panel>
+    <core-header-panel main>
+      <core-toolbar>
+        <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+        <div>Nagarjun Redla</div>
+      </core-toolbar>
 
-    <core-toolbar>
-      <paper-tabs class="fit" selected="messages" flex>
-        <paper-tab name="messages">Messages</paper-tab>
-        <paper-tab name="favorites">Favorites</paper-tab>
-      </paper-tabs>
-    </core-toolbar>
+      <core-card id="core_card" layout vertical>
+        <img src="img/cover.jpg"></img>
+      </core-card>
 
-    <div class="container" layout vertical center>
+      <core-card id="core_card" layout vertical>
+        <core-image class="sized" sizing="cover" src="http://lorempixel.com/400/200/sports/2"></core-image>
+      </core-card>
 
-      <post-list show="messages"></post-list>
+    </core-header-panel>
+  </core-drawer-panel>
+  <script src="javascript/main.js"></script>
+  <script src="javascript/googleanalytics.js"></script>
 
-    </div>
-
-  </core-header-panel>
-
-  <script src="javascript/app.js"></script>
 </body>
-
 </html>
